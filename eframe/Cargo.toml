@@ -36,11 +36,11 @@ glow = ["dep:glow", "egui_glow"]
 
 ## Enable saving app state to disk.
 persistence = [
-  "directories-next",
-  "egui-winit/serde",
-  "egui/persistence",
-  "ron",
-  "serde",
+    "directories-next",
+    "egui-winit/serde",
+    "egui/persistence",
+    "ron",
+    "serde",
 ]
 
 ## Enable profiling with the [`puffin`](https://docs.rs/puffin) crate.
@@ -50,10 +50,7 @@ persistence = [
 puffin = ["dep:puffin", "egui_glow?/puffin"]
 
 ## Enable screen reader support (requires `ctx.options().screen_reader = true;`)
-screen_reader = [
-  "egui-winit/screen_reader",
-  "tts",
-]
+screen_reader = ["egui-winit/screen_reader", "tts"]
 
 ## Use [`wgpu`](https://docs.rs/wgpu) for painting (via [`egui_wgpu`](https://github.com/emilk/egui/tree/master/egui_wgpu)).
 ## This overrides the `glow` feature.
@@ -62,8 +59,8 @@ wgpu = ["dep:wgpu", "egui-wgpu"]
 
 [dependencies]
 egui = { version = "0.18.0", path = "../egui", default-features = false, features = [
-  "bytemuck",
-  "tracing",
+    "bytemuck",
+    "tracing",
 ] }
 tracing = { version = "0.1", default-features = false, features = ["std"] }
 
@@ -72,7 +69,9 @@ tracing = { version = "0.1", default-features = false, features = ["std"] }
 document-features = { version = "0.2", optional = true }
 
 egui_glow = { version = "0.18.0", path = "../egui_glow", optional = true, default-features = false }
-egui-wgpu = { version = "0.18.0", path = "../egui-wgpu", optional = true, features = ["winit"] }
+egui-wgpu = { version = "0.18.0", path = "../egui-wgpu", optional = true, features = [
+    "winit",
+] }
 glow = { version = "0.11", optional = true }
 ron = { version = "0.7", optional = true }
 serde = { version = "1", optional = true, features = ["derive"] }
@@ -82,14 +81,19 @@ wgpu = { version = "0.13", optional = true }
 # native:
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
 dark-light = { version = "0.2.1", optional = true }
-glutin = { version = "0.28.0" }
-winit = "0.26.1"
+glutin = { version = "0.29.0" }
+winit = "0.27.1"
 
 # arboard doesn't provide clipboard support on Android
 [target.'cfg(not(any(target_arch = "wasm32", target_os= "android")))'.dependencies]
-egui-winit = { version = "0.18.0", path = "../egui-winit", default-features = false, features = ["clipboard", "links"] }
+egui-winit = { version = "0.18.0", path = "../egui-winit", default-features = false, features = [
+    "clipboard",
+    "links",
+] }
 [target.'cfg(target_os= "android")'.dependencies]
-egui-winit = { version = "0.18.0", path = "../egui-winit", default-features = false, features = ["links"] }
+egui-winit = { version = "0.18.0", path = "../egui-winit", default-features = false, features = [
+    "links",
+] }
 
 # optional native:
 puffin = { version = "0.13", optional = true }
@@ -104,46 +108,46 @@ percent-encoding = "2.1"
 wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4"
 web-sys = { version = "0.3.52", features = [
-  "BinaryType",
-  "Blob",
-  "Clipboard",
-  "ClipboardEvent",
-  "CompositionEvent",
-  "console",
-  "CssStyleDeclaration",
-  "DataTransfer",
-  "DataTransferItem",
-  "DataTransferItemList",
-  "Document",
-  "DomRect",
-  "DragEvent",
-  "Element",
-  "Event",
-  "EventListener",
-  "EventTarget",
-  "ExtSRgb",
-  "File",
-  "FileList",
-  "FocusEvent",
-  "HtmlCanvasElement",
-  "HtmlElement",
-  "HtmlInputElement",
-  "InputEvent",
-  "KeyboardEvent",
-  "Location",
-  "MediaQueryList",
-  "MouseEvent",
-  "Navigator",
-  "Performance",
-  "Storage",
-  "Touch",
-  "TouchEvent",
-  "TouchList",
-  "WebGl2RenderingContext",
-  "WebglDebugRendererInfo",
-  "WebGlRenderingContext",
-  "WheelEvent",
-  "Window",
+    "BinaryType",
+    "Blob",
+    "Clipboard",
+    "ClipboardEvent",
+    "CompositionEvent",
+    "console",
+    "CssStyleDeclaration",
+    "DataTransfer",
+    "DataTransferItem",
+    "DataTransferItemList",
+    "Document",
+    "DomRect",
+    "DragEvent",
+    "Element",
+    "Event",
+    "EventListener",
+    "EventTarget",
+    "ExtSRgb",
+    "File",
+    "FileList",
+    "FocusEvent",
+    "HtmlCanvasElement",
+    "HtmlElement",
+    "HtmlInputElement",
+    "InputEvent",
+    "KeyboardEvent",
+    "Location",
+    "MediaQueryList",
+    "MouseEvent",
+    "Navigator",
+    "Performance",
+    "Storage",
+    "Touch",
+    "TouchEvent",
+    "TouchList",
+    "WebGl2RenderingContext",
+    "WebglDebugRendererInfo",
+    "WebGlRenderingContext",
+    "WheelEvent",
+    "Window",
 ] }
 
 # optional

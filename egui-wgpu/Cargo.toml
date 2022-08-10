@@ -16,11 +16,11 @@ repository = "https://github.com/emilk/egui/tree/master/egui-wgpu"
 categories = ["gui", "game-development"]
 keywords = ["wgpu", "egui", "gui", "gamedev"]
 include = [
-  "../LICENSE-APACHE",
-  "../LICENSE-MIT",
-  "**/*.rs",
-  "**/*.wgsl",
-  "Cargo.toml",
+    "../LICENSE-APACHE",
+    "../LICENSE-MIT",
+    "**/*.rs",
+    "**/*.wgsl",
+    "Cargo.toml",
 ]
 
 [package.metadata.docs.rs]
@@ -47,4 +47,4 @@ wgpu = "0.13"
 document-features = { version = "0.2", optional = true }
 
 pollster = { version = "0.2", optional = true }
-winit = { version = "0.26", optional = true }
+winit = { version = "0.27.1", optional = true }
