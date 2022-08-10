@@ -2,5 +2,5 @@
 
 // Linux, MacOS, Windows entry point
 fn main() {
-    hello_world::run()
+    hello_world_lib::run()
 }

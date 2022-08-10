@@ -17,3 +17,4 @@ ndk-glue = "0.6.2"
 
 [lib]
 crate-type = ["lib", "cdylib"]
+name = "hello_world_lib"
